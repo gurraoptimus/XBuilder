@@ -1,5 +1,5 @@
-using System.IO; // Add this at the top
 using System;
+using System.IO;
 using System.Xml.Linq;
 
 namespace XML_Studio
@@ -8,6 +8,7 @@ namespace XML_Studio
     {
         static void Main(string[] args)
         {
+            // Create the XML document
             XDocument xDoc = new XDocument(
                 new XDeclaration("1.0", "utf-8", "yes"),
                 new XElement("RootName",
@@ -18,12 +19,23 @@ namespace XML_Studio
                 )
             );
 
+            // Set the file path
+            string path = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                "source", "repos", "CreateXMLDocument", "index.xml"
+            );
 
-string path = Path.Combine(
-    Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-    "source", "repos", "CreateXMLDocument", "index.xml"
-);
-xDoc.Save(path);
+            // Ensure directory exists
+            string directory = Path.GetDirectoryName(path);
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            // Save the XML document
+            xDoc.Save(path);
+
+            Console.WriteLine(@"XML file successfully saved to:\n{path}");
         }
     }
 }
