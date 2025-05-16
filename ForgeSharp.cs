@@ -17,7 +17,7 @@ namespace XML_Studio
             );
 
             string path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) +
-                          @"\source\repos\Xbuilder\index.xml";
+                          @"\source\repos\CreateXMLDocument\index.xml";
             xDoc.Save(path);
         }
     }
