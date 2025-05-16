@@ -1,3 +1,4 @@
+using System.IO; // Add this at the top
 using System;
 using System.Xml.Linq;
 
@@ -16,9 +17,12 @@ namespace XML_Studio
                 )
             );
 
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) +
-                          @"\source\repos\CreateXMLDocument\index.xml";
-            xDoc.Save(path);
+
+string path = Path.Combine(
+    Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+    "source", "repos", "CreateXMLDocument", "index.xml"
+);
+xDoc.Save(path);
         }
     }
 }
