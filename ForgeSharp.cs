@@ -35,7 +35,7 @@ namespace XML_Studio
             // Save the XML document
             xDoc.Save(path);
 
-            Console.WriteLine(@"XML file successfully saved to:\n{path}");
+            Console.WriteLine($"XML file successfully saved to:\n{path}");
         }
     }
 }
