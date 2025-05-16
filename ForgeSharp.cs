@@ -13,7 +13,7 @@ namespace XML_Studio
                 )
             );
 
-            
+            xDoc.Save("c:\\users\\defaultuser0\\Documents\\index.xml");
         }
     }
 }
