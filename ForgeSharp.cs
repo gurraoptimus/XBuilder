@@ -22,7 +22,7 @@ namespace XML_Studio
             // Set the file path
             string path = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-                "source", "repos", "CreateXMLDocument", "index.xml"
+                "index.xml"
             );
 
             // Ensure directory exists
@@ -35,7 +35,7 @@ namespace XML_Studio
             // Save the XML document
             xDoc.Save(path);
 
-            Console.WriteLine($"XML file successfully saved to:\n{path}");
+            Console.WriteLine(@"XML file successfully saved to:\n{path}");
         }
     }
 }
